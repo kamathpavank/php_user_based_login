@@ -24,14 +24,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link"  id="imac">iMAC <span class="sr-only">(current)</span></a>
+          <li class="nav-item ">
+            <a class="nav-link"  id="imac">iMAC</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  id="ilab">iLAB</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" id="robo">ROBOTICS</a>
+            <a class="nav-link " id="robo">ROBOTICS</a>
+          </li>
+          <li class="nav-item" style="margin-left: 700px">
+            <a class="nav-link " id="logout" href="login.php" >LOGOUT</a>
           </li>
         </ul>
         
@@ -46,7 +49,10 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+     $("#logout").hide();
+  </script>
 
   </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2018 at 06:36 AM
+-- Generation Time: Jan 11, 2018 at 06:59 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -41,11 +41,8 @@ CREATE TABLE `userbased` (
 
 INSERT INTO `userbased` (`no`, `username`, `password`, `role`) VALUES
 (1, 'maclab', 'mac123', 'imac'),
-(2, 'maclab', 'mac123', 'imac'),
-(3, 'robolab', 'robo123', 'robotics'),
-(4, 'ilabu', 'ilab123', 'ilab'),
-(5, 'ilabu', 'ilab123', 'ilab'),
-(6, 'ilabu', 'ilab123', 'ilab');
+(2, 'robolab', 'robo123', 'robotics'),
+(3, 'ilabu', 'ilab123', 'ilab');
 
 --
 -- Indexes for dumped tables
