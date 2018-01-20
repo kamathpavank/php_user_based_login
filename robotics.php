@@ -1,4 +1,9 @@
 <?php
+// Start the session
+session_start();
+?>
+
+<?php
   require 'menu.php'
 ?>
 
@@ -12,13 +17,59 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </p>
 </div>
-<script type="text/javascript">
-	$("#logout").show();
-	$("#imac").click(function () {
-		alert("Not authorised");
-	});
+<input type="number" value = "<?php echo $_SESSION["access"]; ?>" id="access_number">
 
-	$("#ilab").click(function () {
-		alert("Not authorised");
-	});
+<script type="text/javascript">
+
+  $("#logout").show();
+  var access_value = $("#access_number").val();
+
+  $("#robotics").click(function(){
+    $("#robotics").attr("href","robotics.php");
+  })
+
+
+  if(access_value == 3){
+    restrict_ilab();
+    restrict_imac();
+  }
+
+  //imac and robotics
+  if(access_value == 13){
+    access_imac();
+    restrict_ilab();
+  }
+
+  //ilab and robotics
+  if(access_value == 23){
+    access_ilab();
+    restrict_imac();
+  }
+
+  function access_ilab(){
+    $("#ilab").click(function () {
+      $("#ilab").attr("href","ilab.php");
+  });
+  }
+
+  function access_imac(){
+    $("#imac").click(function () {
+    $("#imac").attr("href","imac.php");
+
+  });
+  }
+
+  function restrict_ilab(){
+    $("#ilab").click(function () {
+    alert("Not authorised");
+  });
+  }
+
+  function restrict_imac(){
+    $("#imac").click(function () {
+    alert("Not authorised");
+  });
+  }
+
+  $("#access_number").hide()
 </script>

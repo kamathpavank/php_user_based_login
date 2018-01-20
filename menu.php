@@ -25,24 +25,24 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
-            <a class="nav-link"  id="imac">iMAC</a>
+            <a class="nav-link" href=""  id="imac">iMAC</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  id="ilab">iLAB</a>
+            <a class="nav-link" href=""  id="ilab">iLAB</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " id="robo">ROBOTICS</a>
+            <a class="nav-link " href="" id="robo">ROBOTICS</a>
           </li>
           <li class="nav-item" style="margin-left: 700px">
             <a class="nav-link " id="logout" href="login.php" >LOGOUT</a>
           </li>
         </ul>
-        
+
       </div>
     </nav>
       <br>
    <!--  <main role="main" class="container"> -->
- 
+
 <!--     </main>
  -->
     <!-- Bootstrap core JavaScript

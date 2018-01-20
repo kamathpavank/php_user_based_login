@@ -9,7 +9,7 @@ session_start();
 
 <br>
 <div class="jumbotron">
-  <h1 class="display-4">Welcome to ILAB</h1>
+  <h1 class="display-4">Welcome to iMAC Lab</h1>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -19,36 +19,36 @@ session_start();
 </div>
 <input type="number" value = "<?php echo $_SESSION["access"]; ?>" id="access_number">
 
+
 <script type="text/javascript">
 
   $("#logout").show();
   var access_value = $("#access_number").val();
 
-  $("#ilab").click(function(){
-    $("#ilab").attr("href","ilab.php");
+  $("#imac").click(function(){
+    $("#imac").attr("href","imac.php");
   })
 
-
-  if(access_value == 2){
-    restrict_imac();
-    restrict_robotics();
+  if(access_value == 1){
+    restrict_ilab();
+     restrict_robotics();
   }
 
   //imac and robotics
-  if(access_value == 23){
+  if(access_value == 13){
     access_robotics();
-    restrict_imac();
+    restrict_ilab();
   }
 
   //imac and ilab
   if(access_value == 12){
-    access_imac();
+    access_ilab();
     restrict_robotics();
   }
 
-  function access_imac(){
-    $("#imac").click(function () {
-      $("#imac").attr("href","imac.php");
+  function access_ilab(){
+    $("#ilab").click(function () {
+      $("#ilab").attr("href","ilab.php");
   });
   }
 
@@ -59,8 +59,8 @@ session_start();
   });
   }
 
-  function restrict_imac(){
-    $("#imac").click(function () {
+  function restrict_ilab(){
+    $("#ilab").click(function () {
     alert("Not authorised");
   });
   }
