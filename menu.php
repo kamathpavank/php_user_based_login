@@ -34,7 +34,7 @@
             <a class="nav-link " href="" id="robo">ROBOTICS</a>
           </li>
           <li class="nav-item" style="margin-left: 700px">
-            <a class="nav-link " id="logout" href="login.php" >LOGOUT</a>
+            <a class="nav-link " id="logout" href="logout.php" >LOGOUT</a>
           </li>
         </ul>
 

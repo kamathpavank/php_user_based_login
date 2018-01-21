@@ -8,24 +8,19 @@ session_start();
 ?>
 
 <?php
-if (!isset($_POST["username"]) && !isse($_POST["password"])){
-	echo "Enter username and password";
-	header('Location: login.php');
-}
-else{
+
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
 	$sql = "SELECT * FROM `userbased` WHERE `username` = '$username' AND `password` = '$password'";
 	$result = $conn->query($sql);
 
-
-	if($result){
+	if($result->num_rows > 0){
 
 		$row = $result->fetch_assoc();
 		$test = $row['access'];
 		$_SESSION["access"] = $test;
-
+		$_SESSION["username"]=$row['username'];
 		//display first page as imac if access level contains 1
 		if($test == 1 || $test == 12 || $test == 13){
 			header('Location: imac.php');
@@ -48,8 +43,7 @@ else{
 	}
 
 	else{
-		echo "wrong wrong credentials";
-		echo "$username,$password";
+		$_SESSION["credentials"] = "Invalid username and password";
+		header('Location: login.php');
 	}
-}
 ?>
