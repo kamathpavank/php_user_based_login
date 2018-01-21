@@ -28,6 +28,12 @@ session_start();
     $("#robotics").attr("href","robotics.php");
   })
 
+  //Admin can access all pages
+  if(access_value == 123){
+    access_robotics();
+    access_imac();
+    access_ilab();
+  }
 
   if(access_value == 3){
     restrict_ilab();
@@ -55,7 +61,12 @@ session_start();
   function access_imac(){
     $("#imac").click(function () {
     $("#imac").attr("href","imac.php");
+  });
+  }
 
+  function access_robotics(){
+    $("#robo").click(function () {
+    $("#robo").attr("href","robotics.php");
   });
   }
 

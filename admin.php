@@ -25,51 +25,20 @@ session_start();
   $("#logout").show();
   var access_value = $("#access_number").val();
 
+  //access imac lab
   $("#imac").click(function(){
     $("#imac").attr("href","imac.php");
-  })
+  });
 
-  if(access_value == 1){
-    restrict_ilab();
-     restrict_robotics();
-  }
-
-  //imac and robotics
-  if(access_value == 13){
-    access_robotics();
-    restrict_ilab();
-  }
-
-  //imac and ilab
-  if(access_value == 12){
-    access_ilab();
-    restrict_robotics();
-  }
-
-  function access_ilab(){
-    $("#ilab").click(function () {
+  //access ilab
+  $("#ilab").click(function () {
       $("#ilab").attr("href","ilab.php");
   });
-  }
 
-  function access_robotics(){
-    $("#robo").click(function () {
+  //access robotics
+  $("#robo").click(function () {
     $("#robo").attr("href","robotics.php");
-
   });
-  }
-
-  function restrict_ilab(){
-    $("#ilab").click(function () {
-    alert("Not authorised");
-  });
-  }
-
-  function restrict_robotics(){
-    $("#robo").click(function () {
-    alert("Not authorised");
-  });
-  }
 
   $("#access_number").hide()
 </script>
