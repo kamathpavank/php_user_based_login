@@ -35,6 +35,7 @@ session_start();
     access_ilab();
   }
 
+  //only robotics lab
   if(access_value == 3){
     restrict_ilab();
     restrict_imac();

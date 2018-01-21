@@ -19,16 +19,16 @@ session_start();
 </div>
 <input type="number" value = "<?php echo $_SESSION["access"]; ?>" id="access_number">
 
-
 <script type="text/javascript">
-
+  //show logout button
   $("#logout").show();
+
   var access_value = $("#access_number").val();
+
 
   $("#imac").click(function(){
     $("#imac").attr("href","imac.php");
   })
-
 
   //Admin can access all pages
   if(access_value == 123){
@@ -37,6 +37,7 @@ session_start();
     access_ilab();
   }
 
+  //Only imac lab
   if(access_value == 1){
     restrict_ilab();
      restrict_robotics();

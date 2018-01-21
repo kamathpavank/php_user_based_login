@@ -8,14 +8,10 @@ session_start();
 ?>
 
 <?php
-
-
-
 if (!isset($_POST["username"]) && !isse($_POST["password"])){
 	echo "Enter username and password";
 	header('Location: login.php');
 }
-
 else{
 	$username = $_POST["username"];
 	$password = $_POST["password"];
@@ -30,43 +26,29 @@ else{
 		$test = $row['access'];
 		$_SESSION["access"] = $test;
 
-		// //Admin can access all pages
-		// if($test == 123){
-		// }
-
-		//imac is common
+		//display first page as imac if access level contains 1
 		if($test == 1 || $test == 12 || $test == 13){
 			header('Location: imac.php');
 		}
 
-		//ilab is common
+		//display first page as ilab if access level contains 2
 		else if($test == 2 || $test == 23){
 			header('Location: ilab.php');
 		}
 
-		//robotics is common
+		//display first page as robotics if access level contains 3
 		else if($test == 3){
 			header('Location: robotics.php');
 		}
+
+		//Admin
 		else{
 			header('Location: admin.php');
-
 		}
-
-		// echo "$test";
-		// if(strcmp($test, "imac") == 0){
-		// 	header('Location: mac.php');
-		// }
-		// elseif (strcmp($test, "ilab") == 0) {
-		// 	header('Location: ilab.php');
-		// }
-		// elseif (strcmp($test, "robotics") == 0) {
-		// 	header('Location: robotics.php');
-		// }
 	}
 
 	else{
-		echo "wrong wrong credentials  ";
+		echo "wrong wrong credentials";
 		echo "$username,$password";
 	}
 }

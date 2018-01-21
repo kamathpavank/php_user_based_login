@@ -3,8 +3,8 @@
   require 'connection.php';
 ?>
 
-     <div class="jumbotron" style="background-color: white">
-        
+    <div class="jumbotron" style="background-color: white">
+
         <center>
           <div class="container">
           <form class="form-signin" method="post" action="validate.php">
@@ -15,11 +15,11 @@
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" style="width: 200px" required>
             <br>
-           
+
             <br>
             <button class="btn btn-lg btn-primary btn-block" style="width: 200px" type="submit">Sign in</button>
           </form>
         </div>
         </center>
-        
-      </div>
+
+    </div>
