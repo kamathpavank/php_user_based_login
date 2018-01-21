@@ -1,0 +1,8 @@
+Access_level            Labs
+    1                  Only Imac
+    2                  Only Ilab
+    3                  Only Robotics
+    12                 Imac and Ilab
+    13                 Imac and Robotics
+    23                 Ilab and Robotics
+    123                All labs
