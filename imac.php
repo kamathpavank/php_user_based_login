@@ -4,6 +4,20 @@ session_start();
 if(!isset($_SESSION['username'])){
   header('Location:login.php');
 }
+
+
+//If user tries to acces unauthorized page ilab through url
+if($_SESSION["access"] !=12 || $_SESSION["access"] !=23 || $_SESSION["access"] !=2){
+  $path = $_SERVER["PHP_SELF"];
+  header('Locatio: $path');
+}
+
+
+//If user tries to acces unauthorized page through url
+if($_SESSION["access"] !=12 || $_SESSION["access"] !=23 || $_SESSION["access"] !=2){
+  $path = $_SERVER["PHP_SELF"];
+  header('Locatio: $path');
+}
 ?>
 
 <?php
