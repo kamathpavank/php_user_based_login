@@ -5,18 +5,20 @@ if(!isset($_SESSION['username'])){
   header('Location:login.php');
 }
 
+$av = $_SESSION["access"];
 
-//If user tries to acces unauthorized page ilab through url
-if($_SESSION["access"] !=12 || $_SESSION["access"] !=23 || $_SESSION["access"] !=2){
-  $path = $_SERVER["PHP_SELF"];
-  header('Locatio: $path');
-}
+//if user is not authorized to access to imac
+if($av!=1 || $av!=12 || $av!=13 || $av=!123){
 
+  //if user is not authorized to access imac but has access to ilab then direct to ilab page
+  if($av == 2 || $av == 23){
+    header('Location: ilab.php');
+  }
 
-//If user tries to acces unauthorized page through url
-if($_SESSION["access"] !=12 || $_SESSION["access"] !=23 || $_SESSION["access"] !=2){
-  $path = $_SERVER["PHP_SELF"];
-  header('Locatio: $path');
+  //if user is not authorized to access imac but has access to robotics then direct to robotics page
+  else if($av == 3){
+    header('Location: robotics.php');
+  }
 }
 ?>
 

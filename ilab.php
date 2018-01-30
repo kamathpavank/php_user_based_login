@@ -3,7 +3,21 @@
 session_start();
 if(!isset($_SESSION['username'])){
   header('Location:login.php');
+}
 
+$av = $_SESSION["access"];
+
+//if user is not authorized to access to ilab
+if($av!=2 || $av!=12 || $av!=23 || $av=!123){
+
+  //if user is not authorized to access ilab but has access to imac then direct to imac page
+  if($av == 1 || $av == 13){
+    header('Location: imac.php');
+  }
+  //if user is not authorized to access ilab but has access to robotics then direct to robotics page
+  else if($av == 3){
+    header('Location: robotics.php');
+  }
 }
 ?>
 
