@@ -14,10 +14,21 @@ session_start();
 
 	$sql = "SELECT * FROM `userbased` WHERE `username` = '$username' AND `password` = '$password'";
 	$result = $conn->query($sql);
+	
+	//postgres code of querying data
+	//$result = pg_query($conn, "SELECT * FROM `userbased` WHERE `username` = '$username' AND `password` = '$password'");
+
 
 	if($result->num_rows > 0){
-
+		
+	//potgres sql command
+	//if (pg_result_status($result) > 0) {
+		
 		$row = $result->fetch_assoc();
+		
+		//postgres code for fetch_assoc()
+		//$row = pg_fetch_assoc($result);
+		
 		$test = $row['access'];
 		$_SESSION["access"] = $test;
 		$_SESSION["username"]=$row['username'];
