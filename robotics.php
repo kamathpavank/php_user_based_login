@@ -9,7 +9,7 @@ $av = $_SESSION["access"];
 
 //if user is not authorized to access to robotics
 if($av!=3 || $av!=13 || $av!=23 || $av=!123){
-
+    
   //if user is not authorized to access robotics but has access to imac then direct to imac page
   if($av == 1 || $av == 12){
     header('Location: imac.php');
@@ -27,6 +27,7 @@ if($av!=3 || $av!=13 || $av!=23 || $av=!123){
 
 <br>
 <div class="jumbotron">
+  
   <h1 class="display-4">Welcome to Robotics</h1>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   <hr class="my-4">
@@ -46,60 +47,60 @@ if($av!=3 || $av!=13 || $av!=23 || $av=!123){
     $("#robotics").attr("href","robotics.php");
   })
 
-  //Admin can access all pages
-  if(access_value == 123){
-    access_robotics();
-    access_imac();
-    access_ilab();
-  }
+  // //Admin can access all pages
+  // if(access_value == 123){
+  //   access_robotics();
+  //   access_imac();
+  //   access_ilab();
+  // }
 
-  //only robotics lab
-  if(access_value == 3){
-    restrict_ilab();
-    restrict_imac();
-  }
+  // //only robotics lab
+  // if(access_value == 3){
+  //   restrict_ilab();
+  //   restrict_imac();
+  // }
 
-  //imac and robotics
-  if(access_value == 13){
-    access_imac();
-    restrict_ilab();
-  }
+  // //imac and robotics
+  // if(access_value == 13){
+  //   access_imac();
+  //   restrict_ilab();
+  // }
 
-  //ilab and robotics
-  if(access_value == 23){
-    access_ilab();
-    restrict_imac();
-  }
+  // //ilab and robotics
+  // if(access_value == 23){
+  //   access_ilab();
+  //   restrict_imac();
+  // }
 
-  function access_ilab(){
-    $("#ilab").click(function () {
-      $("#ilab").attr("href","ilab.php");
-  });
-  }
+  // function access_ilab(){
+  //   $("#ilab").click(function () {
+  //     $("#ilab").attr("href","ilab.php");
+  // });
+  // }
 
-  function access_imac(){
-    $("#imac").click(function () {
-    $("#imac").attr("href","imac.php");
-  });
-  }
+  // function access_imac(){
+  //   $("#imac").click(function () {
+  //   $("#imac").attr("href","imac.php");
+  // });
+  // }
 
-  function access_robotics(){
-    $("#robo").click(function () {
-    $("#robo").attr("href","robotics.php");
-  });
-  }
+  // function access_robotics(){
+  //   $("#robo").click(function () {
+  //   $("#robo").attr("href","robotics.php");
+  // });
+  // }
 
-  function restrict_ilab(){
-    $("#ilab").click(function () {
-    alert("Not authorised");
-  });
-  }
+  // function restrict_ilab(){
+  //   $("#ilab").click(function () {
+  //   alert("Not authorised");
+  // });
+  // }
 
-  function restrict_imac(){
-    $("#imac").click(function () {
-    alert("Not authorised");
-  });
-  }
+  // function restrict_imac(){
+  //   $("#imac").click(function () {
+  //   alert("Not authorised");
+  // });
+  // }
 
   $("#access_number").hide()
 </script>

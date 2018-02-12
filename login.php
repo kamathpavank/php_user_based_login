@@ -14,6 +14,7 @@ session_start();
 
           <!-- if inavalid username and password -->
           <?php
+          //To display invalid username and password message
           if(isset($_SESSION["credentials"]))
             echo $_SESSION["credentials"];
             ?>
