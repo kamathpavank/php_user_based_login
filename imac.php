@@ -1,4 +1,8 @@
 <?php
+  require "master.php"
+?>
+
+<?php
 // Start the session
 session_start();
 if(!isset($_SESSION['username'])){
@@ -7,23 +11,12 @@ if(!isset($_SESSION['username'])){
 
 $av = $_SESSION["access"];
 
-//if user is not authorized to access to imac
-if($av!=1 || $av!=12 || $av!=13 || $av=!123){
-   
-  //if user is not authorized to access imac but has access to ilab then direct to ilab page
-  if($av == 2 || $av == 23){
-    header('Location: ilab.php');
-  }
-
-  //if user is not authorized to access imac but has access to robotics then direct to robotics page
-  else if($av == 3){
-    header('Location: robotics.php');
-  }
-}
+//Check user authorization for imac
+access_imac($av);
 ?>
 
 <?php
-  require 'menu.php'
+  require 'menu.php';
 ?>
 
 <br>

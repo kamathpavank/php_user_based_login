@@ -1,4 +1,8 @@
 <?php
+  require "master.php"
+?>
+
+<?php
 // Start the session
 session_start();
 if(!isset($_SESSION['username'])){
@@ -7,20 +11,9 @@ if(!isset($_SESSION['username'])){
 
 $av = $_SESSION["access"];
 
-//if user is not authorized to access to ilab
-if($av!=2 || $av!=12 || $av!=23 || $av=!123){
+//Check user authorization for ilab
+access_ilab($av);
 
-
-
-  //if user is not authorized to access ilab but has access to imac then direct to imac page
-  if($av == 1 || $av == 13){
-    header('Location: imac.php');
-  }
-  //if user is not authorized to access ilab but has access to robotics then direct to robotics page
-  else if($av == 3){
-    header('Location: robotics.php');
-  }
-}
 ?>
 
 <?php
@@ -49,61 +42,11 @@ if($av!=2 || $av!=12 || $av!=23 || $av=!123){
     $("#ilab").attr("href","ilab.php");
   })
 
-  // //Admin can access all pages
-  // if(access_value == 123){
-  //   access_robotics();
-  //   access_imac();
-  //   access_ilab();
-  // }
-
-  // //only ilab
-  // if(access_value == 2){
-  //   restrict_imac();
-  //   restrict_robotics();
-  // }
-
-  // //imac and robotics
-  // if(access_value == 23){
-  //   access_robotics();
-  //   restrict_imac();
-  // }
-
-  // //imac and ilab
-  // if(access_value == 12){
-  //   access_imac();
-  //   restrict_robotics();
-  // }
-
-  // function access_ilab(){
-  //    $("#ilab").click(function () {
-  //     $("#ilab").attr("href","ilab.php");
-  // });
-  // }
-
-  // function access_imac(){
-  //   $("#imac").click(function () {
-  //     $("#imac").attr("href","imac.php");
-  // });
-  // }
-
-  // function access_robotics(){
-  //   $("#robo").click(function () {
-  //   $("#robo").attr("href","robotics.php");
-
-  // });
-  // }
-
   function restrict_imac(){
     $("#imac").click(function () {
     alert("Not authorised");
   });
   }
-
-  // function restrict_robotics(){
-  //   $("#robo").click(function () {
-  //   alert("Not authorised");
-  // });
-  // }
 
   $("#access_number").hide()
 </script>
