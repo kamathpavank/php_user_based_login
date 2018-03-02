@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2018 at 03:50 PM
+-- Generation Time: Mar 02, 2018 at 07:43 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -25,39 +25,67 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userbased`
+-- Table structure for table `access`
 --
 
-CREATE TABLE `userbased` (
+CREATE TABLE `access` (
   `no` int(11) NOT NULL,
   `username` text NOT NULL,
-  `password` text NOT NULL,
-  `access` int(11) NOT NULL
+  `access_level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `userbased`
+-- Dumping data for table `access`
 --
 
-INSERT INTO `userbased` (`no`, `username`, `password`, `access`) VALUES
-(1, 'Admin', 'admin123', 123),
-(2, 'Patil', 'patil123', 12),
-(3, 'Jain', 'jain123', 1),
-(4, 'Jha', 'jha123', 1),
-(5, 'Burhan', 'burhan123', 12),
-(6, 'Harshit', 'harshit123', 3),
-(7, 'Adit', 'adit123', 13),
-(8, 'Jeet', 'jeet123', 12),
-(9, 'Ishani', 'parkar123', 2);
+INSERT INTO `access` (`no`, `username`, `access_level`) VALUES
+(1, 'jain', 1),
+(2, 'patil', 1),
+(3, 'patil', 2),
+(4, 'jha', 2),
+(5, 'jha', 3),
+(6, 'panda', 2),
+(7, 'admin', 1),
+(8, 'admin', 2),
+(9, 'admin', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `auth`
+--
+
+CREATE TABLE `auth` (
+  `no` int(11) NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `auth`
+--
+
+INSERT INTO `auth` (`no`, `username`, `password`) VALUES
+(1, 'jain', 'jain123'),
+(2, 'patil', 'patil123'),
+(3, 'jha', 'jha123'),
+(4, 'panda', 'panda123'),
+(6, 'admin', 'admin123');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `userbased`
+-- Indexes for table `access`
 --
-ALTER TABLE `userbased`
+ALTER TABLE `access`
+  ADD PRIMARY KEY (`no`);
+
+--
+-- Indexes for table `auth`
+--
+ALTER TABLE `auth`
   ADD PRIMARY KEY (`no`);
 
 --
@@ -65,9 +93,9 @@ ALTER TABLE `userbased`
 --
 
 --
--- AUTO_INCREMENT for table `userbased`
+-- AUTO_INCREMENT for table `access`
 --
-ALTER TABLE `userbased`
+ALTER TABLE `access`
   MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
