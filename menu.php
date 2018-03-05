@@ -25,13 +25,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
-            <a class="nav-link" href="imac.php"  id="imac">iMAC</a>
+            <a class="nav-link" href="imac.php"  id="imac">imac</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ilab.php"  id="ilab">iLAB</a>
+            <a class="nav-link" href="codestrike.php"  id="ilab">Codestrike</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="robotics.php" id="robo">ROBOTICS</a>
+            <a class="nav-link " href="overview.php" id="robo">Overview</a>
           </li>
           <li class="nav-item" style="margin-left: 700px">
             <a class="nav-link " id="logout" href="logout.php" >LOGOUT</a>

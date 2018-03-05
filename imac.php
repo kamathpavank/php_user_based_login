@@ -12,7 +12,10 @@ if(!isset($_SESSION['username'])){
 $av = $_SESSION["access"];
 
 //Check user authorization for imac
-access_imac($av);
+if($av != 1 && $av != 12){
+  header('Location:codestrike.php');
+  $_SESSION['unauthorized'] = "Not Authorized for Imac";
+}
 ?>
 
 <?php
@@ -21,7 +24,11 @@ access_imac($av);
 
 <br>
 <div class="jumbotron">
-  
+  <?php 
+    if(isset($_SESSION['unauthorized'])){
+    echo $_SESSION['unauthorized'];
+  }
+  ?>
   <h1 class="display-4">Welcome to iMAC Lab</h1>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   <hr class="my-4">

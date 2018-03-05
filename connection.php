@@ -1,7 +1,7 @@
 <?php
 $servername = 'localhost';
 $username = 'root';
-$dbname = 'login';
+$dbname = 'loginonedb';
 $password = 'abcd@1234';
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

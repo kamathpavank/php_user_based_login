@@ -1,5 +1,5 @@
 <?php
-function access_ilab($av){
+function access_codestrike($av){
 	if($av!=2 || $av!=12 || $av!=23 || $av=!123){
 
 	  //if user is not authorized to access ilab but has access to imac then direct to imac page
@@ -32,7 +32,7 @@ function access_imac($av){
 	}
 }
 
-function access_robotics($av){
+function access_overview($av){
 	//if user is not authorized to access to robotics
 	if($av!=3 || $av!=13 || $av!=23 || $av=!123){
 	    

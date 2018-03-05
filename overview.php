@@ -1,6 +1,4 @@
-<?php
-  require "master.php"
-?>
+
 
 <?php
 // Start the session
@@ -11,8 +9,10 @@ if(!isset($_SESSION['username'])){
 
 $av = $_SESSION["access"];
 
-//Check user authorization for robotics
-access_robotics($av);
+if($av != 1 && $av != 12){
+  header('Location:codestrike.php');
+  $_SESSION['unauthorized'] = "Not Authorized for Imac";
+}
 ?>
 
 <?php
@@ -21,8 +21,12 @@ access_robotics($av);
 
 <br>
 <div class="jumbotron">
-  
-  <h1 class="display-4">Welcome to Robotics</h1>
+   <?php 
+   if(isset($_SESSION['unauthorized'])){
+    echo $_SESSION['unauthorized'];
+  }
+  ?>
+  <h1 class="display-4">Overview</h1>
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
