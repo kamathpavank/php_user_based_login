@@ -1,19 +1,16 @@
-<?php
-  require "master.php"
-?>
 
 <?php
 // Start the session
 session_start();
 if(!isset($_SESSION['username'])){
-  header('Location:login.php');
+  header('Location:index.php');
 }
 
-$av = $_SESSION["access"];
-
 //Check user authorization for ilab
-access_ilab($av);
-
+if(in_array(2,$_SESSION["access_levels"])== 0){
+  $_SESSION["credentials"] = "Not autharized for ilab";
+    header('Location:index.php');
+}
 ?>
 
 <?php

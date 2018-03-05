@@ -1,18 +1,18 @@
-<?php
-  require "master.php"
-?>
 
 <?php
 // Start the session
 session_start();
 if(!isset($_SESSION['username'])){
-  header('Location:login.php');
+  header('Location:index.php');
 }
 
 $av = $_SESSION["access"];
 
 //Check user authorization for robotics
-access_robotics($av);
+if(in_array(3,$_SESSION["access_levels"])== 0){
+  $_SESSION["credentials"] = "Not autharized for robotics";
+    header('Location:index.php');
+}
 ?>
 
 <?php

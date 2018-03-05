@@ -31,6 +31,7 @@ session_start();
 			array_push($access_levels,$row2['access_level']);		
 		}
 
+		$_SESSION["access_levels"] = $access_levels;
 		if(in_array(3,$access_levels)){
 			header('Location:robotics.php');
 		}
@@ -47,6 +48,6 @@ session_start();
 
 	else{
 		$_SESSION["credentials"] = "Invalid username and password";
-		header('Location: login.php');
+		header('Location: index.php');
 	}
 ?>
