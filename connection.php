@@ -1,8 +1,10 @@
 <?php
 $servername = 'localhost';
 $username = 'root';
+// $dbname = 'loginonedb';
+// $password = 'abcd@1234';
 $dbname = 'loginonedb';
-$password = 'abcd@1234';
+$password = '';
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
