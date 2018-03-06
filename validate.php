@@ -51,6 +51,6 @@ session_start();
 
 	else{
 		$_SESSION["credentials"] = "Invalid username and password";
-		header('Location: login.php');
+		header('Location: index.php');
 	}
 ?>
